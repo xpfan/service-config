@@ -1,5 +1,5 @@
 ﻿spring:
-  profiles: dev
+  profiles: qa
 # Discovery Server Access
 #eureka config
 eureka:
@@ -22,3 +22,6 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
+----------
+spring:
+  profiles: dev
