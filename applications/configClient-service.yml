@@ -1,3 +1,5 @@
+spring:
+  profiles: dev
 # Discovery Server Access
 #eureka config
 eureka:
