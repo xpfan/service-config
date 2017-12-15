@@ -18,25 +18,3 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: ${service.eureka.defaultZone}
-
-cassandra:
-  contactpoints: ${service.cassandra.hostname}
-  port: ${service.cassandra.port}
-  keyspace: ${service.cassandra.keyspace}
-  updateInServiceApi: http://company-service/companies/cassandra/updateInService
-
-#elasticsearch server
-elasticsearch:
-  clusterName: ${service.elasticsearch.clusterName}
-  host: ${service.elasticsearch.hostname}
-  port: ${service.elasticsearch.port}
-  sniff: true
-  ignore_cluster_name: false
-  ping_timeout: 20s
-  nodes_sampler_interval: 20s
-
-security:
-  getTokenApi: http://oauth2-service/security/oauth/accesstoken
-  username: lcg
-  password: 111111
-
