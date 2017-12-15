@@ -9,7 +9,7 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
     hostname: ${spring.cloud.client.ipAddress}
-    status-page-url-path: /hi
+    status-page-url-path: /cs
 #心跳时间，即服务续约间隔时间（缺省为30s）
     lease-renewal-interval-in-seconds: 5
 # 发呆时间，即服务续约到期时间（缺省为90s）
