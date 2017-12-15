@@ -17,5 +17,3 @@ eureka:
       default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
     registerWithEureka: true
     fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://172.18.32.97:8889/eureka/ #${service.eureka.defaultZone}
