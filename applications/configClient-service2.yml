@@ -1,0 +1,24 @@
+﻿spring:
+  profiles: dev
+# Discovery Server Access
+#eureka config
+eureka:
+  instance:
+    virtualHostName: ${spring.application.name}
+    hostname: localhost
+    appname: ${spring.application.name}
+    appGroupName: test-group  # integration group
+    preferIpAddress: true  #true -> display ip address ; false -> display server name
+    virtual-host-name: ${spring.application.name}
+    metadataMap:
+      instanceId: ${spring.application.name}:${server.port}
+    leaseRenewalIntervalInSeconds: 5  
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    availabilityZones:
+      default: ${APPLICATION_DOMAIN:${DOMAIN:defaultZone}}
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
