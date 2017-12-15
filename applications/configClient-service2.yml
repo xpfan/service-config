@@ -1,18 +1,15 @@
-﻿spring:
-  profiles: dev
-# Discovery Server Access
+﻿#nohup java -Xms128m -Xmx256m -jar oauth2-service.jar --server.port=19301 --service.eureka.hostname=172.28.24.32 --service.cassandra.hostname=172.28.24.32 --spring.cloud.config.uri=http://172.28.24.32:19300/config &
 #eureka config
 eureka:
   instance:
     virtualHostName: ${spring.application.name}
     hostname: localhost
     appname: ${spring.application.name}
-    appGroupName: test-group  # integration group
+    #appGroupName: ${service.eureka.appGroupName}  # integration group
     preferIpAddress: true  #true -> display ip address ; false -> display server name
     virtual-host-name: ${spring.application.name}
     metadataMap:
       instanceId: ${spring.application.name}:${server.port}
-    leaseRenewalIntervalInSeconds: 5  
   client:
     region: default
     registryFetchIntervalSeconds: 5
@@ -21,4 +18,4 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: ${service.eureka.defaultZone}
