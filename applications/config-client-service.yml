@@ -5,6 +5,8 @@ eureka:
     serviceUrl:
       defaultZone: ${service.eureka.defaultZone}
     registry-fetch-interval-seconds: 5
+    registerWithEureka: true
+    fetchRegistry: true
     # 默认为30秒  
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
